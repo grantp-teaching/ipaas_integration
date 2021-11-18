@@ -1,10 +1,12 @@
-EC2 access to S3 {#sec:ec2-access-to-s3}
+% Infrastructure / Platform as a service integration
+
+EC2 access to S3 
 ================
 
-EC2 is IaaS whilst S3 is PaaS. To connect them we will need to create an
-IAM role. An IAM role is a way to allow certain parts of AWS to take
-actions on your behalf without needing to know your username/password or
-key/secret key.
+EC2 is IaaS whilst S3 is PaaS.
+To connect them we need an IAM role. 
+A role allows parts of AWS to take actions on your behalf
+without your username/password or key/secret key.
 
 A role is defined in terms of two **policies**.
 
