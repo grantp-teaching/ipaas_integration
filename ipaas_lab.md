@@ -9,23 +9,24 @@ Tasks
 
 3. Create an Amazon Linux EC2 instance with the instance profile.
 
-4. Use `git` on the instance to clone *this* repository.
+4. Use `git` on the instance to clone *this* repository. (Use yum to install git)
 
-5. Move `qprocessor.py` to the `/home/ec2-user` directory. (mv)
+5. Change dir into the git repo.
 
 6. Run the `qprocessor.py` program so that it's printing "no messages".
    Install any additional package(s) you need using `yum` and/or `pip3`.
+   You will also need to set AWS config ( in the file /home/ec2-user/.aws/config )
 
 7. Send some messages to your queue from your lab desktop - these should be received.
 
-8. Stop your `qprocessor.py`.
+8. Stop your `qprocessor.py`. (Ctrl-C)
 
 9. Install the service unit file in `/etc/systemd/system/qprocessor.service`.
 	Modify to point to your queue.
 
-10. Enable your service
+10. Enable your service (sudo systemctl enable qprocessor)
 
-11. Start your service.
+11. Start your service. (sudo systemctl start qprocessor)
 
 12. Send messages to your queue. Do they appear in the file `qmessages.txt`?
 

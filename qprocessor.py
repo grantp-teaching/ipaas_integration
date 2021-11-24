@@ -7,10 +7,11 @@ import sys
 import boto3
 
 # get QueueUrl from command line
-if sys.argv[1] is None:
-    print('usage: python3 consumer.py https://queue_url_here/')
+if len(sys.argv) < 2:
+    print('usage: python3 consumer.py https://queue_url_here/ out_file_path')
     exit
 queue_url=sys.argv[1]
+out_file_path=sys.argv[2]
 
 # client object for SQS
 sqs = boto3.client('sqs')
@@ -18,7 +19,7 @@ sqs = boto3.client('sqs')
 wait_time_seconds = 1
 
 def print_to_file(line):
-    out_file=open('/home/ec2-user/qmessages.txt','a')
+    out_file=open(out_file_path,'a')
     print(line, file=out_file)
     out_file.close()
 
