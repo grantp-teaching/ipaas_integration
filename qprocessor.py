@@ -17,8 +17,12 @@ sqs = boto3.client('sqs')
 
 wait_time_seconds = 1
 
-out_file=open('qmessages.txt','a')
-print('START', file=out_file)
+def print_to_file(line):
+    out_file=open('/home/ec2-user/qmessages.txt','a')
+    print(line, file=out_file)
+    out_file.close()
+
+print_to_file('START')
 
 while True:
     # receive
@@ -34,11 +38,10 @@ while True:
         
         # do processing work here (example just prints)
         print("received: " + message['Body'])
-        print(message['Body'], file=out_file)
+        print_to_file(message['Body'])
+        
         
         # delete once processed
         sqs.delete_message(QueueUrl=queue_url, ReceiptHandle=message['ReceiptHandle'])
         
-    
-out_file.close()
 
