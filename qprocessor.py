@@ -9,7 +9,7 @@ import boto3
 # get QueueUrl from command line
 if len(sys.argv) < 2:
     print('usage: python3 consumer.py https://queue_url_here/ out_file_path')
-    exit
+    sys.exit(1)
 queue_url=sys.argv[1]
 out_file_path=sys.argv[2]
 
