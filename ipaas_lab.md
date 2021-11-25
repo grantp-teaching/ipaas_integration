@@ -23,6 +23,7 @@ Tasks
 
 9. Install the service unit file in `/etc/systemd/system/qprocessor.service`.
 	Modify to point to your queue.
+	(must use full paths - find full path of any command using 'which')
 
 10. Enable your service (sudo systemctl enable qprocessor)
 
