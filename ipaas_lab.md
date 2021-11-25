@@ -7,7 +7,7 @@ Tasks
 
 2. Create a queue  named `labq`
 
-3. Create an Amazon Linux EC2 instance with the instance profile.
+3. Create an Amazon Linux EC2 instance **with the instance profile**.
 
 4. Use `git` on the instance to clone *this* repository. (Use yum to install git)
 
