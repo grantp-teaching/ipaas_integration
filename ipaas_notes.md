@@ -3,7 +3,7 @@
 EC2 access to S3 
 ================
 
-EC2 is IaaS whilst S3 is PaaS.
+EC2 is IaaS whilst S3, SQS is PaaS.
 To connect them we need an IAM role. 
 A role allows parts of AWS to take actions on your behalf
 without your username/password or key/secret key.
